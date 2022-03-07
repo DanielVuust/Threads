@@ -1,0 +1,9 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net5.0</TargetFramework>
+    <RootNamespace>Cs_programmering_basis_tråd_øvelserOpgave</RootNamespace>
+  </PropertyGroup>
+
+</Project>

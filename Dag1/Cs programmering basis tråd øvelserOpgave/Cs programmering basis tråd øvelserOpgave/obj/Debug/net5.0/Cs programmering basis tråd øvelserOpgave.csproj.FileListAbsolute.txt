@@ -1,0 +1,16 @@
+C:\Users\davu\source\repos\Skole\H2\Tråde\Cs programmering basis tråd øvelserOpgave\Cs programmering basis tråd øvelserOpgave\bin\Debug\net5.0\Cs programmering basis tråd øvelserOpgave.exe
+C:\Users\davu\source\repos\Skole\H2\Tråde\Cs programmering basis tråd øvelserOpgave\Cs programmering basis tråd øvelserOpgave\bin\Debug\net5.0\Cs programmering basis tråd øvelserOpgave.deps.json
+C:\Users\davu\source\repos\Skole\H2\Tråde\Cs programmering basis tråd øvelserOpgave\Cs programmering basis tråd øvelserOpgave\bin\Debug\net5.0\Cs programmering basis tråd øvelserOpgave.runtimeconfig.json
+C:\Users\davu\source\repos\Skole\H2\Tråde\Cs programmering basis tråd øvelserOpgave\Cs programmering basis tråd øvelserOpgave\bin\Debug\net5.0\Cs programmering basis tråd øvelserOpgave.runtimeconfig.dev.json
+C:\Users\davu\source\repos\Skole\H2\Tråde\Cs programmering basis tråd øvelserOpgave\Cs programmering basis tråd øvelserOpgave\bin\Debug\net5.0\Cs programmering basis tråd øvelserOpgave.dll
+C:\Users\davu\source\repos\Skole\H2\Tråde\Cs programmering basis tråd øvelserOpgave\Cs programmering basis tråd øvelserOpgave\bin\Debug\net5.0\ref\Cs programmering basis tråd øvelserOpgave.dll
+C:\Users\davu\source\repos\Skole\H2\Tråde\Cs programmering basis tråd øvelserOpgave\Cs programmering basis tråd øvelserOpgave\bin\Debug\net5.0\Cs programmering basis tråd øvelserOpgave.pdb
+C:\Users\davu\source\repos\Skole\H2\Tråde\Cs programmering basis tråd øvelserOpgave\Cs programmering basis tråd øvelserOpgave\obj\Debug\net5.0\Cs programmering basis tråd øvelserOpgave.csproj.AssemblyReference.cache
+C:\Users\davu\source\repos\Skole\H2\Tråde\Cs programmering basis tråd øvelserOpgave\Cs programmering basis tråd øvelserOpgave\obj\Debug\net5.0\Cs programmering basis tråd øvelserOpgave.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\davu\source\repos\Skole\H2\Tråde\Cs programmering basis tråd øvelserOpgave\Cs programmering basis tråd øvelserOpgave\obj\Debug\net5.0\Cs programmering basis tråd øvelserOpgave.AssemblyInfoInputs.cache
+C:\Users\davu\source\repos\Skole\H2\Tråde\Cs programmering basis tråd øvelserOpgave\Cs programmering basis tråd øvelserOpgave\obj\Debug\net5.0\Cs programmering basis tråd øvelserOpgave.AssemblyInfo.cs
+C:\Users\davu\source\repos\Skole\H2\Tråde\Cs programmering basis tråd øvelserOpgave\Cs programmering basis tråd øvelserOpgave\obj\Debug\net5.0\Cs programmering basis tråd øvelserOpgave.csproj.CoreCompileInputs.cache
+C:\Users\davu\source\repos\Skole\H2\Tråde\Cs programmering basis tråd øvelserOpgave\Cs programmering basis tråd øvelserOpgave\obj\Debug\net5.0\Cs programmering basis tråd øvelserOpgave.dll
+C:\Users\davu\source\repos\Skole\H2\Tråde\Cs programmering basis tråd øvelserOpgave\Cs programmering basis tråd øvelserOpgave\obj\Debug\net5.0\ref\Cs programmering basis tråd øvelserOpgave.dll
+C:\Users\davu\source\repos\Skole\H2\Tråde\Cs programmering basis tråd øvelserOpgave\Cs programmering basis tråd øvelserOpgave\obj\Debug\net5.0\Cs programmering basis tråd øvelserOpgave.pdb
+C:\Users\davu\source\repos\Skole\H2\Tråde\Cs programmering basis tråd øvelserOpgave\Cs programmering basis tråd øvelserOpgave\obj\Debug\net5.0\Cs programmering basis tråd øvelserOpgave.genruntimeconfig.cache

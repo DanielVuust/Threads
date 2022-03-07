@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31613.86
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cs programmering trådpool øvelserOpgave", "Cs programmering trådpool øvelserOpgave\Cs programmering trådpool øvelserOpgave.csproj", "{D5C150F3-54EF-4F4B-AA64-9C99038996FA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D5C150F3-54EF-4F4B-AA64-9C99038996FA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D5C150F3-54EF-4F4B-AA64-9C99038996FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D5C150F3-54EF-4F4B-AA64-9C99038996FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D5C150F3-54EF-4F4B-AA64-9C99038996FA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D14BE855-6070-4A42-A5AA-31DF2F783030}
+	EndGlobalSection
+EndGlobal

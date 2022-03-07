@@ -1,0 +1,7 @@
+C:\Users\davu\source\repos\Skole\H2\Tråde\Cs programmering basis tråd øvelserOpgave2\Cs programmering basis tråd øvelserOpgave2\bin\Debug\Cs programmering basis tråd øvelserOpgave2.exe.config
+C:\Users\davu\source\repos\Skole\H2\Tråde\Cs programmering basis tråd øvelserOpgave2\Cs programmering basis tråd øvelserOpgave2\bin\Debug\Cs programmering basis tråd øvelserOpgave2.exe
+C:\Users\davu\source\repos\Skole\H2\Tråde\Cs programmering basis tråd øvelserOpgave2\Cs programmering basis tråd øvelserOpgave2\bin\Debug\Cs programmering basis tråd øvelserOpgave2.pdb
+C:\Users\davu\source\repos\Skole\H2\Tråde\Cs programmering basis tråd øvelserOpgave2\Cs programmering basis tråd øvelserOpgave2\obj\Debug\Cs programmering basis tråd øvelserOpgave2.csproj.AssemblyReference.cache
+C:\Users\davu\source\repos\Skole\H2\Tråde\Cs programmering basis tråd øvelserOpgave2\Cs programmering basis tråd øvelserOpgave2\obj\Debug\Cs programmering basis tråd øvelserOpgave2.csproj.CoreCompileInputs.cache
+C:\Users\davu\source\repos\Skole\H2\Tråde\Cs programmering basis tråd øvelserOpgave2\Cs programmering basis tråd øvelserOpgave2\obj\Debug\Cs programmering basis tråd øvelserOpgave2.exe
+C:\Users\davu\source\repos\Skole\H2\Tråde\Cs programmering basis tråd øvelserOpgave2\Cs programmering basis tråd øvelserOpgave2\obj\Debug\Cs programmering basis tråd øvelserOpgave2.pdb

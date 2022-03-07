@@ -1,0 +1,10 @@
+C:\Users\davu\source\repos\Skole\H2\Tråde\Tread1\Tread1\bin\Debug\Tread1.exe.config
+C:\Users\davu\source\repos\Skole\H2\Tråde\Tread1\Tread1\bin\Debug\Tread1.exe
+C:\Users\davu\source\repos\Skole\H2\Tråde\Tread1\Tread1\bin\Debug\Tread1.pdb
+C:\Users\davu\source\repos\Skole\H2\Tråde\Tread1\Tread1\obj\Debug\Tread1.csproj.AssemblyReference.cache
+C:\Users\davu\source\repos\Skole\H2\Tråde\Tread1\Tread1\obj\Debug\Tread1.Form1.resources
+C:\Users\davu\source\repos\Skole\H2\Tråde\Tread1\Tread1\obj\Debug\Tread1.Properties.Resources.resources
+C:\Users\davu\source\repos\Skole\H2\Tråde\Tread1\Tread1\obj\Debug\Tread1.csproj.GenerateResource.cache
+C:\Users\davu\source\repos\Skole\H2\Tråde\Tread1\Tread1\obj\Debug\Tread1.csproj.CoreCompileInputs.cache
+C:\Users\davu\source\repos\Skole\H2\Tråde\Tread1\Tread1\obj\Debug\Tread1.exe
+C:\Users\davu\source\repos\Skole\H2\Tråde\Tread1\Tread1\obj\Debug\Tread1.pdb
