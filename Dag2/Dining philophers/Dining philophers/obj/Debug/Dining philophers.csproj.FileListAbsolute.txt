@@ -1,0 +1,7 @@
+C:\Users\davu\source\repos\Skole\H2\Threads\Dag2\Dining philophers\Dining philophers\bin\Debug\Dining philophers.exe.config
+C:\Users\davu\source\repos\Skole\H2\Threads\Dag2\Dining philophers\Dining philophers\bin\Debug\Dining philophers.exe
+C:\Users\davu\source\repos\Skole\H2\Threads\Dag2\Dining philophers\Dining philophers\bin\Debug\Dining philophers.pdb
+C:\Users\davu\source\repos\Skole\H2\Threads\Dag2\Dining philophers\Dining philophers\obj\Debug\Dining philophers.csproj.AssemblyReference.cache
+C:\Users\davu\source\repos\Skole\H2\Threads\Dag2\Dining philophers\Dining philophers\obj\Debug\Dining philophers.csproj.CoreCompileInputs.cache
+C:\Users\davu\source\repos\Skole\H2\Threads\Dag2\Dining philophers\Dining philophers\obj\Debug\Dining philophers.exe
+C:\Users\davu\source\repos\Skole\H2\Threads\Dag2\Dining philophers\Dining philophers\obj\Debug\Dining philophers.pdb
