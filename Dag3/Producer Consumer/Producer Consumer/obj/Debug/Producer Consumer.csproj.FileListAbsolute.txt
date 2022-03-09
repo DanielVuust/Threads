@@ -1,0 +1,7 @@
+C:\Users\davu\source\repos\Skole\H2\Threads\Dag3\Producer Consumer\Producer Consumer\bin\Debug\Producer Consumer.exe.config
+C:\Users\davu\source\repos\Skole\H2\Threads\Dag3\Producer Consumer\Producer Consumer\bin\Debug\Producer Consumer.exe
+C:\Users\davu\source\repos\Skole\H2\Threads\Dag3\Producer Consumer\Producer Consumer\bin\Debug\Producer Consumer.pdb
+C:\Users\davu\source\repos\Skole\H2\Threads\Dag3\Producer Consumer\Producer Consumer\obj\Debug\Producer Consumer.csproj.AssemblyReference.cache
+C:\Users\davu\source\repos\Skole\H2\Threads\Dag3\Producer Consumer\Producer Consumer\obj\Debug\Producer Consumer.csproj.CoreCompileInputs.cache
+C:\Users\davu\source\repos\Skole\H2\Threads\Dag3\Producer Consumer\Producer Consumer\obj\Debug\Producer Consumer.exe
+C:\Users\davu\source\repos\Skole\H2\Threads\Dag3\Producer Consumer\Producer Consumer\obj\Debug\Producer Consumer.pdb

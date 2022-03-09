@@ -11,21 +11,21 @@ namespace Dining_philophers
     {
         static void Main(string[] args)
         {
-            int philophersCount = 5;
-            Philopher[] philophers = new Philopher[philophersCount];
-            for(int i = 0; i < philophersCount; i++)
+            int count = 50;
+            Philosopher[] philosophers = new Philosopher[count];
+            for(int i = 0; i < count; i++)
             {
-                philophers[i] = new Philopher(i, philophersCount);
+                philosophers[i] = new Philosopher(i, count);
             }
-            Table table= new Table(philophers);
-            for(int i = 0; i < philophersCount  ; i++)
+            Table table= new Table(philosophers);
+            for(int i = 0; i < count  ; i++)
             {
                 Console.WriteLine(i);
-                Thread thread = new Thread(() => table.StartEating(philophers[i]));
+                Thread thread = new Thread(() => table.StartEating(philosophers[i]));
                 thread.Start();
                 Thread.Sleep(100);
             }
-            Thread forkThread = new Thread(() => table.DisplayStatus(philophers));
+            Thread forkThread = new Thread(() => table.DisplayStatus(philosophers));
             forkThread.Start();
         }
     }

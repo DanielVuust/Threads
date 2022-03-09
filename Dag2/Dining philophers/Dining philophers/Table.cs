@@ -10,35 +10,48 @@ namespace Dining_philophers
     public class Table
     {
         private int philophersCount;
-        static bool[] forks = new bool[5];
+        static bool[] forks = new bool[50];
 
-        public Table(Philopher[] philophers)
+        public Table(Philosopher[] philosophers)
         {
-            this.philophersCount = philophers.Length;
+            this.philophersCount = philosophers.Length;
         }
-        public void StartEating(Philopher philopher)
+        public void StartEating(Philosopher philosopher)
         {
-            int forkOneIndex = philopher.allowedForks[0];
-            int forkTwoIndex = philopher.allowedForks[1];
+            int forkOneIndex = philosopher.allowedForks[0];
+            int forkTwoIndex = philosopher.allowedForks[1];
             while (true)
             {
-                Monitor.Enter(forks);
-                    if (forks[forkOneIndex] || forks[forkTwoIndex])
+                lock (forks)
+                {
+                    while (forks[forkOneIndex] || forks[forkTwoIndex])
                     {
                         Monitor.Wait(forks);
                     }
                     forks[forkOneIndex] = true;
                     forks[forkTwoIndex] = true;
-                    philopher.isEating = true;
-                    Thread.Sleep(1000);
-                    philopher.isEating = false;
+                    philosopher.isEating = true;
+
+                }
+                //The philosopher is eating for 500ms 
+                Thread.Sleep(500);
+                //The philosopher stopped eating
+                lock (forks) 
+                { 
+                    philosopher.isEating = false;
                     forks[forkOneIndex] = false;
                     forks[forkTwoIndex] = false;
                     Monitor.PulseAll(forks);
+
+                }
+                Thread.Sleep(10);
                 
             }
         }
-        public void DisplayStatus(Philopher[] philophers)
+        /// <summary>
+        ///     Displays the current status for forks and philosophers
+        /// </summary>
+        public void DisplayStatus(Philosopher[] philophers)
         {
             while (true)
             {
@@ -46,23 +59,23 @@ namespace Dining_philophers
                 this.CheckForkStatus();
                 Console.WriteLine();
                 this.CheckPhilophersStatus(philophers);
-                Thread.Sleep(200);
+                Thread.Sleep(100);
             }
 
         }
-        private void CheckPhilophersStatus(Philopher[] philophers)
+        private void CheckPhilophersStatus(Philosopher[] Philosophes)
         {
-            foreach (Philopher philopher in philophers)
+            foreach (Philosopher philosopher in Philosophes)
             {
-                if (philopher.isEating)
+                if (philosopher.isEating)
                 {
                     Console.ForegroundColor = ConsoleColor.Green;
-                    Console.WriteLine(philopher.philopherNum + " is eating");
+                    Console.WriteLine(philosopher.philosopherNum + " is eating");
                 }
                 else
                 {
                     Console.ForegroundColor = ConsoleColor.Red;
-                    Console.WriteLine(philopher.philopherNum + " is Not eating");
+                    Console.WriteLine(philosopher.philosopherNum + " is Not eating");
                 }
             }
             

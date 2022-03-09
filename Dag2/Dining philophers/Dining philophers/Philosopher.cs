@@ -9,26 +9,27 @@ namespace Dining_philophers
     public class Philosopher
     {
         public int[] allowedForks = new int[2];
-        public int philopherNum;
+        public int philosopherNum;
         public bool isEating;
-        public Philosopher(int philopherNum, int totalPhilophers)
+        public Philosopher(int philosopherNum, int totalPhilophers)
         {
-            this.philopherNum = philopherNum;
-            if (philopherNum == totalPhilophers - 1)
+            this.philosopherNum = philosopherNum;
+            if (philosopherNum == totalPhilophers - 1)
             {
                 allowedForks[0] = 0;
             }
             else
             {
-                allowedForks[0] = philopherNum++;
+                allowedForks[0] = philosopherNum++;
             }
-            if(philopherNum == 0)
+
+            if(philosopherNum == 0)
             {
                 allowedForks[1] = totalPhilophers;
             }
             else
             {
-                allowedForks[1] = philopherNum--;    
+                allowedForks[1] = philosopherNum--;    
 
             }
         }
