@@ -6,17 +6,17 @@ using System.Threading.Tasks;
 
 namespace Flaskeautomaten
 {
-    class Drinks
+    enum DrinkTypes
     {
-        private static readonly List<string> _drinkTypes = new List<string>()
+        Water = 0,
+        Beer = 1
+    };
+    class DrinksInfo
+    {
+        public int DrinkTypesCount { get { return Enum.GetNames(typeof(DrinkTypes)).Length; } }
+        public DrinkTypes GetDrinkTypeBasedOnIndex(int index)
         {
-            "Water",
-            "Beer"
-        };
-        public int DrinkTypesCount { get { return _drinkTypes.Count; } }
-        public static string GetDrinkTypeBasedOnIndex(int index)
-        {
-            return _drinkTypes[index];
+            return (DrinkTypes)index;
         }
     }
 }

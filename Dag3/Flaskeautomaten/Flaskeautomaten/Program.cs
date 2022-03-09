@@ -13,14 +13,14 @@ namespace Flaskeautomaten
         {
             Thread producerThread = new Thread(new Producer().ProduceDrinks);
             producerThread.Start();
+            Thread SplitterThread = new Thread(new Splitter().StartSplittingDrinks);
+            SplitterThread.Start();
+            Thread BeerTruckThread = new Thread(new BeerTruck().StartLoadingBeerTruck);
+            BeerTruckThread.Start();
+            Thread WaterTruckThread = new Thread(new WaterTruck().StartLoadingWaterTruck);
+            WaterTruckThread.Start();
+            
 
-            lock (DrinkBuffers.AllDrinksBuffer)
-            {
-                Console.WriteLine("Producer is waiting2");
-                Console.WriteLine("Producer is waiting3");
-
-
-            }
             Console.Read();
         }
     }

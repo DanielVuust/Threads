@@ -9,15 +9,16 @@ namespace Flaskeautomaten
     class Drink
     {
 
-        private string drinkType;
+        private DrinkTypes drinkType;
         private int drinkNum;
-        public string DrinkType { get { return drinkType; } }
+        public DrinkTypes DrinkType { get { return drinkType; } }
         public int DrinkNum { get { return drinkNum; } }
 
 
         public Drink(int drinkType, int drinkNum)
         {
-            this.drinkType = Drinks.GetDrinkTypeBasedOnIndex(drinkType);
+            DrinksInfo drinksInfo = new DrinksInfo();
+            this.drinkType = drinksInfo.GetDrinkTypeBasedOnIndex(drinkType);
             this.drinkNum = drinkNum;
         }
     }
