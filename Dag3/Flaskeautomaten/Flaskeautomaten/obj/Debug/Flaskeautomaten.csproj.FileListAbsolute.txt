@@ -1,0 +1,7 @@
+C:\Users\davu\source\repos\Skole\H2\Threads\Dag3\Flaskeautomaten\Flaskeautomaten\bin\Debug\Flaskeautomaten.exe.config
+C:\Users\davu\source\repos\Skole\H2\Threads\Dag3\Flaskeautomaten\Flaskeautomaten\bin\Debug\Flaskeautomaten.exe
+C:\Users\davu\source\repos\Skole\H2\Threads\Dag3\Flaskeautomaten\Flaskeautomaten\bin\Debug\Flaskeautomaten.pdb
+C:\Users\davu\source\repos\Skole\H2\Threads\Dag3\Flaskeautomaten\Flaskeautomaten\obj\Debug\Flaskeautomaten.csproj.AssemblyReference.cache
+C:\Users\davu\source\repos\Skole\H2\Threads\Dag3\Flaskeautomaten\Flaskeautomaten\obj\Debug\Flaskeautomaten.csproj.CoreCompileInputs.cache
+C:\Users\davu\source\repos\Skole\H2\Threads\Dag3\Flaskeautomaten\Flaskeautomaten\obj\Debug\Flaskeautomaten.exe
+C:\Users\davu\source\repos\Skole\H2\Threads\Dag3\Flaskeautomaten\Flaskeautomaten\obj\Debug\Flaskeautomaten.pdb
