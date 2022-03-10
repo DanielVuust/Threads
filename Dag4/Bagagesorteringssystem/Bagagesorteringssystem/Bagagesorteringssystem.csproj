@@ -43,20 +43,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Gui\ConsoleController.cs" />
+    <Compile Include="Gui\DisplayAirportInfo.cs" />
     <Compile Include="Objects\Airport.cs" />
     <Compile Include="Objects\Baggage.cs" />
-    <Compile Include="Buffers\BaggageBuffer.cs" />
-    <Compile Include="Buffers\Buffers.cs" />
-    <Compile Include="Buffers\GateBuffer.cs" />
-    <Compile Include="Destinations.cs" />
-    <Compile Include="Gates.cs" />
     <Compile Include="Objects\CheckInDesk.cs" />
     <Compile Include="SetUpAirport.cs" />
-    <Compile Include="ToGateBuffer.cs" />
+    <Compile Include="BaggageSplitter.cs" />
     <Compile Include="CheckInDesks.cs" />
-    <Compile Include="FilghtInfo.cs" />
     <Compile Include="Flight.cs" />
-    <Compile Include="Gate.cs" />
+    <Compile Include="Objects\Gate.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SortingSystem.cs" />

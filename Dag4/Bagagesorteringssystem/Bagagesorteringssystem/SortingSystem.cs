@@ -16,6 +16,8 @@ namespace Bagagesorteringssystem
             setUpAirport.SetUpAll();
             Thread checkInDeskThread = new Thread(new CheckInDesks().StartAcceptingBaggage);
             checkInDeskThread.Start();
+            Thread baggageSplitterThread = new Thread(new BaggageSplitter().StartSplittingBaggage);
+            baggageSplitterThread.Start();
         }
         
     }

@@ -5,3 +5,10 @@ C:\Users\davu\source\repos\Skole\H2\Threads\Dag4\Bagagesorteringssystem\Bagageso
 C:\Users\davu\source\repos\Skole\H2\Threads\Dag4\Bagagesorteringssystem\Bagagesorteringssystem\bin\Debug\Bagagesorteringssystem.pdb
 C:\Users\davu\source\repos\Skole\H2\Threads\Dag4\Bagagesorteringssystem\Bagagesorteringssystem\obj\Debug\Bagagesorteringssystem.exe
 C:\Users\davu\source\repos\Skole\H2\Threads\Dag4\Bagagesorteringssystem\Bagagesorteringssystem\obj\Debug\Bagagesorteringssystem.pdb
+C:\Users\danie\source\repos\C#\Threads\Dag4\Bagagesorteringssystem\Bagagesorteringssystem\obj\Debug\Bagagesorteringssystem.csprojAssemblyReference.cache
+C:\Users\danie\source\repos\C#\Threads\Dag4\Bagagesorteringssystem\Bagagesorteringssystem\obj\Debug\Bagagesorteringssystem.csproj.CoreCompileInputs.cache
+C:\Users\danie\source\repos\C#\Threads\Dag4\Bagagesorteringssystem\Bagagesorteringssystem\obj\Debug\Bagagesorteringssystem.exe
+C:\Users\danie\source\repos\C#\Threads\Dag4\Bagagesorteringssystem\Bagagesorteringssystem\obj\Debug\Bagagesorteringssystem.pdb
+C:\Users\danie\source\repos\C#\Threads\Dag4\Bagagesorteringssystem\Bagagesorteringssystem\bin\Debug\Bagagesorteringssystem.exe.config
+C:\Users\danie\source\repos\C#\Threads\Dag4\Bagagesorteringssystem\Bagagesorteringssystem\bin\Debug\Bagagesorteringssystem.exe
+C:\Users\danie\source\repos\C#\Threads\Dag4\Bagagesorteringssystem\Bagagesorteringssystem\bin\Debug\Bagagesorteringssystem.pdb

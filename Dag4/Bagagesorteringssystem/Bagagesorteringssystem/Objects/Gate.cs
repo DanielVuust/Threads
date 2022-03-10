@@ -9,27 +9,29 @@ namespace Bagagesorteringssystem
     class Gate
     {
         private string gateName;
-        private List<string> acceptedFlightsIdList;
         private string destination;
+        private Queue<Baggage> gateQueue = new Queue<Baggage>();
+
+
         public string GateName
         {
             get { return gateName; }
-        }
-        public List<string> AcceptedFlightsIdList
-        {
-            get { return acceptedFlightsIdList; }
         }
 
         public string Destination
         {
             get { return destination; }
+            set { destination = value; }
         }
-
-        public Gate(string gateName, string destination)
+        //List of Queues/Buffers to the specific gate 
+        public Queue<Baggage> GateQueue 
+        { 
+            get { return gateQueue; } 
+            set { gateQueue = value; }
+        }
+        public Gate(string gateName)
         {
             this.gateName = gateName;
-            this.destination = destination;
         }
-
     }
 }

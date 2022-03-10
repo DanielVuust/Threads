@@ -9,47 +9,46 @@ namespace Bagagesorteringssystem
 {
     class SetUpAirport
     {
-        private readonly int maxCheckInDesks = 10;
         public void SetUpAll()
         {
             SetUpDesks();
-            //SetUpGates();
+            SetUpGates();
         }
 
         private void SetUpDesks()
         {
-            for (int i = 0; i < maxCheckInDesks; i++)
+            foreach(var str in GetRandomLocation())
             {
-                Airport.CheckInDesks.Add(new CheckInDesk("London"));
+                Airport.CheckInDesks.Add(new CheckInDesk(str));
             }
         }
 
-        private void SetUpDesksBuffers()
-        {
-            foreach (CheckInDesk checkInDesks in Airport.CheckInDesks)
-            {
-                Queue<Baggage> queue = new Queue<Baggage>();
-
-            }
-        }
+        
         private void SetUpGates()
         {
-            for (int i = 0; i < 4; i++)
+            int gateNum = 0;
+            char gateSection = 'A';
+            //Creates a gate foreach destination.
+            foreach(var gateDestination in GetRandomLocation())
             {
-                Gate gate = new Gate(i.ToString(), GetRandomDestination());
-                Gates.AllGates.Add(gate);
+                Gate gate = new Gate(gateSection + gateNum.ToString());
+                gate.Destination = gateDestination;
+                Airport.Gates.Add(gate);
             }
+            //for (int i = 0; i < 4; i++)
+            //{
+            //    Gate gate = new Gate("A" + i.ToString());
+            //    gate.Destination = xxxxx
+            //    Airport.Gates.Add(gate);
+            //}
         }
 
-        private string GetRandomDestination()
+        private IEnumerable<string> GetRandomLocation()
         {
-            Random ran = new Random();
-
-            //Gets a random destination form the Destinations enum
-            Destinations destination = (Destinations)ran.Next(0, 3);
-
-            //Converts the Destinations enum to string and returns it.
-            return Enum.GetName(typeof(Destinations), destination);
+            
+            yield return Airport.Connections[0].ToString();
+            yield return Airport.Connections[1].ToString();
+            yield return Airport.Connections[2].ToString();
         }
     }
 }

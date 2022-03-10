@@ -9,13 +9,19 @@ namespace Bagagesorteringssystem
     class Baggage
     {
         private string id;
+        private string destination;
         public string Id
         {
             get { return id; }
         }
-        //Creates baggage with a special GUID as an id.
-        public Baggage()
+        public string Destination
         {
+            get { return destination; }
+        }
+        //Creates baggage with a special GUID as an id.
+        public Baggage(string destination)
+        {
+            this.destination = destination;
             id = Guid.NewGuid().ToString();
         }
     }
