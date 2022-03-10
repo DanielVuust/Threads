@@ -8,13 +8,11 @@ namespace Flaskeautomaten
 {
     class Drink
     {
-
         private DrinkTypes drinkType;
-        private int drinkNum;
         public DrinkTypes DrinkType { get { return drinkType; } }
+        private int drinkNum;
         public int DrinkNum { get { return drinkNum; } }
-
-
+        
         public Drink(int drinkType, int drinkNum)
         {
             DrinksInfo drinksInfo = new DrinksInfo();

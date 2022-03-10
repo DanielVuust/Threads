@@ -59,6 +59,7 @@ namespace Flaskeautomaten
             //Simulates the time it takes to send and get a new truck.
             Thread.Sleep(timeToWaitForNewTruck);
             totalLoadsSent++;
+            currentTruckCargo = 0;
             Console.WriteLine($"A total of {totalLoadsSent} loads of {truckMaxCargo} Waters have been sent");
         }
     }

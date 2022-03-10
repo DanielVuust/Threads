@@ -20,7 +20,6 @@ namespace Flaskeautomaten
             Thread WaterTruckThread = new Thread(new WaterTruck().StartLoadingWaterTruck);
             WaterTruckThread.Start();
             
-
             Console.Read();
         }
     }
