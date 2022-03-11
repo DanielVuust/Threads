@@ -27,16 +27,15 @@ namespace Bagagesorteringssystem
         
         private void SetUpGates()
         {
-            int gateNum = 0;
-            char gateSection = 'A';
+            
             //Creates a gate foreach destination.
             foreach(var gateDestination in GetRandomLocation())
             {
-                //Gate gate = new Gate(gateSection + gateNum.ToString());
-                //gate.Destination = gateDestination;
-                //gate.InUse = true;
-                //int gateIndexToChange = Array.IndexOf(Airport.Gates, null);
-                //Airport.Gates[gateIndexToChange] = gate;
+                Gate gate = 
+                gate.Destination = gateDestination;
+                gate.InUse = true;
+                int gateIndexToChange = Array.IndexOf(Airport.Gates, null);
+                Airport.Gates[gateIndexToChange] = gate;
             }
             //for (int i = 0; i < 4; i++)
             //{
