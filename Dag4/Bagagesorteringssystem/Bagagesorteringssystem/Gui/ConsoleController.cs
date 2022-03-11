@@ -12,13 +12,7 @@ namespace Bagagesorteringssystem.Gui
     {
         private char keyToToggleListener = 'M';
         TextWriterTraceListener listener = new TextWriterTraceListener(System.Console.Out);
-        public void StartConsoleController()
-        {
-            Debug.Listeners.Add(listener);
-            Thread thread = new Thread(this.StartLisiningForKeys);
-            thread.Start();
-            thread.Join();
-        }
+        
         private void StartLisiningForKeys()
         {
             string strInput;
@@ -41,10 +35,7 @@ namespace Bagagesorteringssystem.Gui
 
                     Debug.Listeners.Remove(listener);
                     DisplayAllAirportInfoThread.Start();
-
-
                 }
-                
             }
         }
     }

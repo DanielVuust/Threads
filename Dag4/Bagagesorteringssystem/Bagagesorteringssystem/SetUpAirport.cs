@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -31,9 +32,11 @@ namespace Bagagesorteringssystem
             //Creates a gate foreach destination.
             foreach(var gateDestination in GetRandomLocation())
             {
-                Gate gate = new Gate(gateSection + gateNum.ToString());
-                gate.Destination = gateDestination;
-                Airport.Gates.Add(gate);
+                //Gate gate = new Gate(gateSection + gateNum.ToString());
+                //gate.Destination = gateDestination;
+                //gate.InUse = true;
+                //int gateIndexToChange = Array.IndexOf(Airport.Gates, null);
+                //Airport.Gates[gateIndexToChange] = gate;
             }
             //for (int i = 0; i < 4; i++)
             //{

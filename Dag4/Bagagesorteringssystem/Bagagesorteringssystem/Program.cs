@@ -17,8 +17,6 @@ namespace Bagagesorteringssystem
             
             SortingSystem sortingSystem = new SortingSystem();
             sortingSystem.StartSortingSystem();
-            ConsoleController consoleController = new ConsoleController();
-            consoleController.StartConsoleController();
         }
     }
 }

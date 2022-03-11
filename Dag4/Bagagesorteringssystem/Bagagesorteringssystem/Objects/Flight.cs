@@ -7,15 +7,16 @@ using System.Threading.Tasks;
 
 namespace Bagagesorteringssystem
 {
-    class Baggage
+    class Flight
     {
-        private string id;
+        private string flightId;
         private string destination;
         private string timeStamps;
-        public string Id
+        public string FlightId
         {
-            get { return id; }
+            get { return flightId; }
         }
+        
         public string Destination
         {
             get { return destination; }
@@ -25,13 +26,13 @@ namespace Bagagesorteringssystem
             get { return timeStamps; }
             set { timeStamps = value; }
         }
-        //Creates baggage with a special GUID as an id.
-        public Baggage(string destination)
+
+        public Flight(string destination)
         {
             this.destination = destination;
-            id = Guid.NewGuid().ToString();
-        }
+            flightId = Guid.NewGuid().ToString();
 
+        }
         public void AddTimeStampWithCurrentTime(string text)
         {
             StringBuilder stringBuilder = new StringBuilder();
@@ -42,4 +43,6 @@ namespace Bagagesorteringssystem
             Debug.Print("\t" + timeStamps);
         }
     }
+
+
 }

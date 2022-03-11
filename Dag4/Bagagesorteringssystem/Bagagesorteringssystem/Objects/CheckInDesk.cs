@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using System.Runtime.InteropServices.WindowsRuntime;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -14,7 +15,7 @@ namespace Bagagesorteringssystem.Objects
         private bool isOpen;
         private string destination;
         private string id;
-        private List<Baggage> currentQueue = new List<Baggage>();
+        private Queue<Baggage> currentQueue = new Queue<Baggage>();
         public bool IsOpen
         {
             get { return isOpen; }
@@ -27,12 +28,13 @@ namespace Bagagesorteringssystem.Objects
         public string Destination
         {
             get { return destination; }
+            set { destination = value; }
         }
         public string Id
         {
             get { return id; }
         }
-        public List<Baggage> CurrentQueue
+        public Queue<Baggage> CurrentQueue
         {
             get { return currentQueue; }
         }
@@ -44,21 +46,81 @@ namespace Bagagesorteringssystem.Objects
         }
         public void AddBaggageToCurrentQueue(Baggage baggage)
         {
-            this.currentQueue.Add(baggage);
-        }
-        public void CheckInBaggage(Baggage baggage)
-        {
-           
-            Monitor.Enter(Airport.DeskQueue);
-            if (Airport.DeskQueue.Count > 5)
+            try
             {
-                Debug.Print($"Checkin Desk {this.id} is wating for space in DeskQueue");
-                Monitor.Wait(Airport.DeskQueue);
+                Monitor.Enter(currentQueue);
+
+                this.currentQueue.Enqueue(baggage);
+               
             }
-            Debug.Print($"Baggage {baggage.Id} has been queued into DeskQueue");
-            Airport.DeskQueue.Enqueue(baggage);
-            Monitor.PulseAll(Airport.DeskQueue);
-            Monitor.Exit(Airport.DeskQueue);
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
+            finally
+            {
+                Monitor.PulseAll(currentQueue);
+                Monitor.Exit(currentQueue);
+            }
+            Thread.Sleep(100);
+        }
+        public void CheckInBaggageNextInQueue()
+        {
+            try
+            {
+                Monitor.Enter(Airport.DeskQueue);
+
+                Baggage baggage = TakeBaggageFromPassengerQueue();
+                //The desk queue has a max number of 5 object before it has to wait for space.
+                if (Airport.DeskQueue.Count >= 5)
+                {
+                    Debug.Print($"Check in Desk {this.id} is waiting for space in DeskQueue");
+                    Monitor.Wait(Airport.DeskQueue);
+                }
+
+                Debug.Print($"Baggage {baggage.Id} has been queued into DeskQueue");
+                Airport.DeskQueue.Enqueue(baggage);
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
+            finally
+            {
+                Monitor.PulseAll(Airport.DeskQueue);
+                Monitor.Exit(Airport.DeskQueue);
+
+            }
+        }
+
+        private Baggage TakeBaggageFromPassengerQueue()
+        {
+            Baggage baggage = null;
+            try
+            {
+                Monitor.Enter(currentQueue);
+
+                if (currentQueue.Count <= 0)
+                {
+                    Monitor.Wait(currentQueue);
+                    Debug.Print($"Check in desk {this.id} is waiting for passengers");
+                }
+
+                baggage = currentQueue.Dequeue();
+                Debug.Print($"The check {this.id} in desk has taken a object from a passenger");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
+            finally
+            {
+                Monitor.PulseAll(currentQueue);
+                Monitor.Exit(currentQueue);
+            }
+
+            return baggage;
         }
     }
 }

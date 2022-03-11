@@ -11,7 +11,7 @@ namespace Bagagesorteringssystem
         private string gateName;
         private string destination;
         private Queue<Baggage> gateQueue = new Queue<Baggage>();
-
+        private bool inUse;
 
         public string GateName
         {
@@ -28,6 +28,12 @@ namespace Bagagesorteringssystem
         { 
             get { return gateQueue; } 
             set { gateQueue = value; }
+        }
+
+        public bool InUse
+        {
+            get { return inUse; }
+            set { inUse = value; }
         }
         public Gate(string gateName)
         {

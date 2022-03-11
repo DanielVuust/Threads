@@ -16,13 +16,13 @@ namespace Bagagesorteringssystem
         {
             while (true)
             {
-                Baggage baggage = TakeBaggegeFromDeskQueue();
-                Gate gate = DetermenGateOutput(baggage);
+                Baggage baggage = TakeBaggageFromDeskQueue();
+                Gate gate = DetermineGateOutput(baggage);
                 QueueBaggageInSpecificGateBuffer(baggage, gate);
 
             }
         }
-        private Baggage TakeBaggegeFromDeskQueue()
+        private Baggage TakeBaggageFromDeskQueue()
         {
             Baggage baggage = null;
             try
@@ -30,12 +30,13 @@ namespace Bagagesorteringssystem
                 Monitor.Enter(Airport.DeskQueue);
                 if (Airport.DeskQueue.Count <= 0)
                 {
-                    Debug.Print("Spittler is now wating for baggage");
+                    Debug.Print("Splitter is now waiting for baggage");
                     Monitor.Wait(Airport.DeskQueue);
                 }
                 //Simulates the time it takes to pick up from queue.
                 Thread.Sleep(timeToPickUpFromDeskQueue);
-                baggage = Airport.DeskQueue.Dequeue();    
+                baggage = Airport.DeskQueue.Dequeue();
+                baggage.AddTimeStampWithCurrentTime("Has been queued to the desk queue");
             }
             catch (Exception ex)
             {
@@ -48,7 +49,7 @@ namespace Bagagesorteringssystem
             }
             return baggage;
         }
-        private Gate DetermenGateOutput(Baggage baggage)
+        private Gate DetermineGateOutput(Baggage baggage)
         {
             //Finds the first gate with a destination equals to the baggage destination.
             return Airport.Gates.First(x => x.Destination == baggage.Destination);
