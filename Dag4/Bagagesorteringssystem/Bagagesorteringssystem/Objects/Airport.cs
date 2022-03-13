@@ -32,7 +32,7 @@ namespace Bagagesorteringssystem.Objects
             {
                 Gates[i] = new Gate(i.ToString());
             }
-            for (int i = 0; i < Gates.Length; i++)
+            for (int i = 0; i < CheckInDesks.Length; i++)
             {
                 CheckInDesks[i] = new CheckInDesk(null);
             }

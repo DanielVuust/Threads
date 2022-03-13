@@ -24,14 +24,28 @@ namespace Bagagesorteringssystem
         }
         private void DepartFullFlights()
         {
-            //return Airport.Gates.Any(x => x.Flight.MaxCargo-10 >= x.GateQueue.Count);
+            //Returns all flights that are 90% or more full.
+            var gates = Airport.Gates.Where(x => x?.Flight?.Cargo.Count(y=>y != null) >= (x?.Flight?.MaxCargo * 0.9)).ToList();
+            foreach (var item in gates)
+            {
+                item.DepartFlight();
+            }
         }
         private void LoadAllCargoFromGateBufferToFlight()
         {
             foreach (Gate gate in Airport.Gates.Where(x => x.InUse == true && x.Flight != null && x.GateQueue.Count > 0))
             {
-                gate.Flight.Status = "Loading Cargo";
-                gate.Flight.Cargo.ToList().AddRange(gate.GateQueue.AsEnumerable());
+                if(gate.Flight.Status != "Loading Cargo")
+                    gate.Flight.Status = "Loading Cargo";
+
+                //var test = gate.Flight.Cargo.Where(x => x != null);
+
+                gate.Flight.Cargo = gate.Flight.Cargo.Where(x => x != null).Concat(gate.GateQueue).ToArray();
+                gate.GateQueue.Clear();
+                //IEnumerable<Baggage> bag = gate.GateQueue.AsEnumerable();
+
+                //var test = gate.Flight.Cargo.Where(x => x != null).ToList().AddRange(bag);
+                //gate.Flight.Cargo = test;
             }
         }
 

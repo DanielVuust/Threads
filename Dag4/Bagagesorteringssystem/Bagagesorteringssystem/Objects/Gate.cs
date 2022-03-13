@@ -47,5 +47,11 @@ namespace Bagagesorteringssystem
         {
             this.gateName = gateName;
         }
+        public void DepartFlight()
+        {
+            flight = null;
+            destination = null;
+            inUse = false;
+        }
     }
 }
