@@ -18,9 +18,11 @@ namespace Bagagesorteringssystem
 
         private void SetUpDesks()
         {
-            foreach(var str in GetRandomLocation())
+            foreach(var connections in Airport.Connections)
             {
-                Airport.CheckInDesks.Add(new CheckInDesk(str));
+                CheckInDesk checkInDesk  = Airport.CheckInDesks.First(x => x.IsOpen == false);
+                checkInDesk.Destination = connections;
+                checkInDesk.IsOpen = true;
             }
         }
 
@@ -29,28 +31,12 @@ namespace Bagagesorteringssystem
         {
             
             //Creates a gate foreach destination.
-            foreach(var gateDestination in GetRandomLocation())
-            {
-                Gate gate = 
-                gate.Destination = gateDestination;
-                gate.InUse = true;
-                int gateIndexToChange = Array.IndexOf(Airport.Gates, null);
-                Airport.Gates[gateIndexToChange] = gate;
-            }
-            //for (int i = 0; i < 4; i++)
+            //foreach(var gateDestination in Airport.Connections)
             //{
-            //    Gate gate = new Gate("A" + i.ToString());
-            //    gate.Destination = xxxxx
-            //    Airport.Gates.Add(gate);
+            //    Gate gate = Airport.Gates.First(x => x.InUse == false);
+            //    gate.Destination = gateDestination;
+            //    gate.InUse = true;
             //}
-        }
-
-        private IEnumerable<string> GetRandomLocation()
-        {
-            
-            yield return Airport.Connections[0].ToString();
-            yield return Airport.Connections[1].ToString();
-            yield return Airport.Connections[2].ToString();
         }
     }
 }

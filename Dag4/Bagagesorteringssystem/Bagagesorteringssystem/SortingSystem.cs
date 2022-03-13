@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using Bagagesorteringssystem.Gui;
+using Bagagesorteringssystem.Producers;
 
 namespace Bagagesorteringssystem
 {
@@ -17,8 +18,10 @@ namespace Bagagesorteringssystem
             setUpAirport.SetUpAll();
             Thread createBaggageThread = new Thread(new CreateBaggage().StartCreatingBaggage);
             createBaggageThread.Start();
-            Thread acceptFlightsThread = new Thread(new ControlTower().StartAcceptingFlights);
-            acceptFlightsThread.Start();
+            Thread createFlightsThread = new Thread(new CreateFlights().StartAcceptingFlights);
+            createFlightsThread.Start();
+            Thread controlTowerThread = new Thread(new ControlTower().StartControllingFlights);
+            controlTowerThread.Start();
             Thread checkInDeskThread = new Thread(new CheckInDesksController().StartAcceptingBaggage);
             checkInDeskThread.Start();
             Thread baggageSplitterThread = new Thread(new BaggageSplitter().StartSplittingBaggage);

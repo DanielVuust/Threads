@@ -10,7 +10,6 @@ namespace Bagagesorteringssystem
 {
     class CreateBaggage
     {
-        private int delayBeforeCreatingNewBaggage = 100;
 
         public void StartCreatingBaggage()
         {
@@ -18,11 +17,14 @@ namespace Bagagesorteringssystem
             {
                 Baggage baggage = CreateRandomBaggage();
 
-                var checkInDesk = Airport.CheckInDesks.Where(x => x.Destination == baggage.Destination).Min();
+                //First gets all of the check in desks with the destination of the baggage,
+                //Then uses the aggregate command to get the check in desk with the lowest queue count.
+                var checkInDesk = Airport.CheckInDesks.Where(x => x.Destination == baggage.Destination).Aggregate((minItem, nextItem) => minItem.CurrentQueue.Count < nextItem.CurrentQueue.Count ? minItem : nextItem);
+
                 checkInDesk.AddBaggageToCurrentQueue(baggage);
 
                 //Simulates te delay between passengers checking in baggage. 
-                Thread.Sleep(delayBeforeCreatingNewBaggage);
+                Thread.Sleep(Airport.BaggageInterval);
             }
 
         }

@@ -13,32 +13,52 @@ namespace Bagagesorteringssystem
     class KeyBoardListener
     {
         TextWriterTraceListener listener = new TextWriterTraceListener(System.Console.Out);
-        Thread DisplayAllAirportInfoThread = new Thread(new DisplayAirportInfo().DisplayAllAirportInfo);
+        Thread DisplayAllAirportInfoThread;
         public void StartListeningForKeyPresses()
         {
-            Debug.Listeners.Add(listener);
-            ConsoleKey consoleKey;
-            char charInput;
-            bool allowedInput;
+            //Debug.Listeners.Add(listener);
+            char consoleKey;
             DisplayAirportInfo displayAirportInfo = new DisplayAirportInfo();
+            DisplayAllAirportInfoThread = new Thread(displayAirportInfo.DisplayAllAirportInfo);
+            AirportController airportController = new AirportController();
+            int connectionIndex;
+            DisplayAllAirportInfoThread.Start();
             while (true)
             {
-                consoleKey = Console.ReadKey().Key;
+                consoleKey = Console.ReadKey().KeyChar;
 
                 switch (consoleKey)
                 {
-                    case (ConsoleKey.M):
+                    case 'm':
                         ToggleDisplayType();
                         break;
-                    case ConsoleKey.D1:
-                        Airport.AddGateToAirport();
+                    case '1':
+                        airportController.AddGateToAirport();
                         break;
-                    case ConsoleKey.D2:
+                    case '2':
+                        connectionIndex = PromtUserAllConnectionsAndGetChoose();
+                        airportController.AddCheckInDesk(connectionIndex);
+                        break;
+                    case '3':
 
                         break;
-                    case ConsoleKey.D3:
-
+                    case 'æ':
+                        //Makes sure the interval won't go under 0ms.
+                        if (Airport.BaggageInterval <= 0)
+                            break;
+                        Airport.BaggageInterval -= 100;
                         break;
+                    case 'p':
+                        Airport.BaggageInterval += 100;
+                        break;
+                    case 'z':
+                        if (displayAirportInfo.ShowKeybindings)
+                            displayAirportInfo.ShowKeybindings = false;
+                        else
+                            displayAirportInfo.ShowKeybindings = true;
+                        break;
+
+
                 }
             }
         }
@@ -46,18 +66,19 @@ namespace Bagagesorteringssystem
         {
             if (!Debug.Listeners.Contains(listener))
             {
-                DisplayAllAirportInfoThread.Abort();
+                DisplayAllAirportInfoThread.Suspend();
                 Debug.Listeners.Add(listener);
                 return;
             }
-
+            DisplayAllAirportInfoThread.Resume();
             Debug.Listeners.Remove(listener);
-            DisplayAllAirportInfoThread.Start();
+            
         }
-
-        private void AddCheckInDesk()
+        private int PromtUserAllConnectionsAndGetChoose()
         {
-
+            var consoleKey = Console.ReadKey().KeyChar;
+            Int32.TryParse(consoleKey.ToString(), out int j);
+            return j;
         }
     }
 }

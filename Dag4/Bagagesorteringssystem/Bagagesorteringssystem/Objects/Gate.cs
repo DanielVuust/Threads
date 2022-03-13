@@ -12,12 +12,12 @@ namespace Bagagesorteringssystem
         private string destination;
         private Queue<Baggage> gateQueue = new Queue<Baggage>();
         private bool inUse;
+        private Flight flight;
 
         public string GateName
         {
             get { return gateName; }
         }
-
         public string Destination
         {
             get { return destination; }
@@ -29,11 +29,19 @@ namespace Bagagesorteringssystem
             get { return gateQueue; } 
             set { gateQueue = value; }
         }
-
         public bool InUse
         {
             get { return inUse; }
             set { inUse = value; }
+        }
+        public Flight Flight
+        {
+            get { return flight; }
+            set 
+            { 
+                flight = value;
+                destination = value.Destination;
+            }
         }
         public Gate(string gateName)
         {

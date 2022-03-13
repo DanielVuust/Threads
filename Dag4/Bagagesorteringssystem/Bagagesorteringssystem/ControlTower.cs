@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading;
@@ -10,21 +11,62 @@ namespace Bagagesorteringssystem
 {
     class ControlTower
     {
-        public void StartAcceptingFlights()
+        public void StartControllingFlights()
         {
             while (true)
             {
-                AddFlightToWaitingQueue();
+                TryToAssigningFlightToGates();
+                LoadAllCargoFromGateBufferToFlight();
+                DepartFullFlights();
+
+                Thread.Sleep(1000);
             }
         }
-        
-        private void AddFlightToWaitingQueue()
+        private void DepartFullFlights()
         {
+            //return Airport.Gates.Any(x => x.Flight.MaxCargo-10 >= x.GateQueue.Count);
+        }
+        private void LoadAllCargoFromGateBufferToFlight()
+        {
+            foreach (Gate gate in Airport.Gates.Where(x => x.InUse == true && x.Flight != null && x.GateQueue.Count > 0))
+            {
+                gate.Flight.Status = "Loading Cargo";
+                gate.Flight.Cargo.ToList().AddRange(gate.GateQueue.AsEnumerable());
+            }
+        }
+
+        private void TryToAssigningFlightToGates()
+        {
+            
+            Flight flight = GetNextInFlightQueue();
+            if (flight == null)
+            {
+                Debug.Print($"No flights to assigs to gates");
+                return;
+            }
+            Gate gate = GetUnUsedGate();
+            if (gate == null)
+            {
+                Debug.Print($"No gates for flights to be assigened to ");
+                return;
+            }
+
+            
+        }
+
+        private Flight GetNextInFlightQueue()
+        {
+            Flight flight = null;
             try
             {
                 Monitor.Enter(Airport.FlightsWaitingQueue);
-                Flight flight = CreateFlight();
-                Airport.FlightsWaitingQueue.Enqueue(flight);
+                while (Airport.FlightsWaitingQueue.Count <= 0)
+                {
+                    Debug.Print("Control tower is waiting for flights");
+                    Monitor.Wait(Airport.FlightsWaitingQueue);
+                }
+
+
             }
             catch (Exception ex)
             {
@@ -35,13 +77,14 @@ namespace Bagagesorteringssystem
                 Monitor.PulseAll(Airport.FlightsWaitingQueue);
                 Monitor.Exit(Airport.FlightsWaitingQueue);
             }
-            Thread.Sleep(3000);
-        }
 
-        private Flight CreateFlight()
-        {
-            Flight flight = new Flight("London");
             return flight;
+        }
+        
+        private Gate GetUnUsedGate()
+        {
+            var test = Airport.Gates.FirstOrDefault(x => x.InUse == false);
+            return test;
         }
     }
 }

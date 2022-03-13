@@ -16,19 +16,12 @@ namespace Bagagesorteringssystem
             {
                 foreach (var checkInDesk in Airport.CheckInDesks)
                 {
-                    //Opens the desk if if its closed 
-                    if(!checkInDesk.IsOpen)
-                        checkInDesk.IsOpen = true;
-
-                    checkInDesk.CheckInBaggageNextInQueue();
+                    if(checkInDesk.CurrentQueue.Count > 0)
+                        checkInDesk.CheckInBaggageNextInQueue();
                 }
+                Thread.Sleep(1000);
 
             }
-        }
-
-        private void CheckIfDeskCanClose(CheckInDesk checkInDesk)
-        {
-
         }
     }
 }

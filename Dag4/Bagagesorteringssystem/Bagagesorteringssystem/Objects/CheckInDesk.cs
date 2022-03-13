@@ -62,15 +62,14 @@ namespace Bagagesorteringssystem.Objects
                 Monitor.PulseAll(currentQueue);
                 Monitor.Exit(currentQueue);
             }
-            Thread.Sleep(100);
         }
         public void CheckInBaggageNextInQueue()
         {
             try
             {
                 Monitor.Enter(Airport.DeskQueue);
-
                 Baggage baggage = TakeBaggageFromPassengerQueue();
+
                 //The desk queue has a max number of 5 object before it has to wait for space.
                 if (Airport.DeskQueue.Count >= 5)
                 {
@@ -100,12 +99,6 @@ namespace Bagagesorteringssystem.Objects
             try
             {
                 Monitor.Enter(currentQueue);
-
-                if (currentQueue.Count <= 0)
-                {
-                    Monitor.Wait(currentQueue);
-                    Debug.Print($"Check in desk {this.id} is waiting for passengers");
-                }
 
                 baggage = currentQueue.Dequeue();
                 Debug.Print($"The check {this.id} in desk has taken a object from a passenger");

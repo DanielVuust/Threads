@@ -43,15 +43,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AirportController.cs" />
     <Compile Include="ControlTower.cs" />
-    <Compile Include="CreateBaggage.cs" />
-    <Compile Include="GatesController.cs" />
-    <Compile Include="Gui\ConsoleController.cs" />
+    <Compile Include="Producers\CreateBaggage.cs" />
     <Compile Include="Gui\DisplayAirportInfo.cs" />
     <Compile Include="Gui\KeyboardListener.cs" />
     <Compile Include="Objects\Airport.cs" />
     <Compile Include="Objects\Baggage.cs" />
     <Compile Include="Objects\CheckInDesk.cs" />
+    <Compile Include="Producers\CreateFlights.cs" />
     <Compile Include="SetUpAirport.cs" />
     <Compile Include="BaggageSplitter.cs" />
     <Compile Include="CheckInDesksController.cs" />

@@ -19,6 +19,7 @@ namespace Bagagesorteringssystem
         public string Destination
         {
             get { return destination; }
+            set { value = destination; }
         }
         public string TimeStamps
         {

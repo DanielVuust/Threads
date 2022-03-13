@@ -12,6 +12,9 @@ namespace Bagagesorteringssystem
         private string flightId;
         private string destination;
         private string timeStamps;
+        private Baggage[] cargo;
+        private int maxCargo;
+        private string status;
         public string FlightId
         {
             get { return flightId; }
@@ -26,12 +29,32 @@ namespace Bagagesorteringssystem
             get { return timeStamps; }
             set { timeStamps = value; }
         }
+        public Baggage[] Cargo
+        {
+            get { return cargo; }
+            set { cargo = value; }
+        }
+        public int MaxCargo
+        {
+            get { return maxCargo; }
+        }
+        public string Status
+        {
+            get { return status; }
+            set 
+            { 
+                this.AddTimeStampWithCurrentTime($"Status changed from {status} to {value}");
+                status = value;
+            }
+        }
 
         public Flight(string destination)
         {
             this.destination = destination;
             flightId = Guid.NewGuid().ToString();
-
+            maxCargo = new Random().Next(20, 50);
+            status = "Waiting";
+            cargo = new Baggage[maxCargo];
         }
         public void AddTimeStampWithCurrentTime(string text)
         {

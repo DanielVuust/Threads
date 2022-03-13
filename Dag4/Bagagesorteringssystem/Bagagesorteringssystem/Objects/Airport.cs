@@ -10,11 +10,14 @@ namespace Bagagesorteringssystem.Objects
 {
     class Airport
     {
-        public static List<CheckInDesk> CheckInDesks = new List<CheckInDesk>();
+        public static CheckInDesk[] CheckInDesks = new CheckInDesk[10];
         public static Queue<Baggage> DeskQueue = new Queue<Baggage>();
         public static Gate[] Gates = new Gate[10];
         public static Queue<Flight> FlightsWaitingQueue = new Queue<Flight>();
+        public static Queue<Baggage> LostBaggageQueue = new Queue<Baggage>();
 
+        //Busyness is not intregated yet.
+        public static int BaggageInterval = 1000;
 
         public static List<string> Connections = new List<string>()
         {
@@ -29,18 +32,21 @@ namespace Bagagesorteringssystem.Objects
             {
                 Gates[i] = new Gate(i.ToString());
             }
+            for (int i = 0; i < Gates.Length; i++)
+            {
+                CheckInDesks[i] = new CheckInDesk(null);
+            }
         }
         public static bool AddGateToAirport()
         {
-            var gate = Gates.First(x => x.InUse == true);
+            var gate = Gates.FirstOrDefault(x => x.InUse == false);
             if (gate == null)
                 return false;
 
             //Creates a new gate and assigns a flight to it.
             gate.Destination = FlightsWaitingQueue.First().Destination;
             gate.InUse = true;
-            int gateIndexToChange = Array.IndexOf(Airport.Gates, null);
-            Airport.Gates[gateIndexToChange] = gate;
+
             return true;
         }
     }
